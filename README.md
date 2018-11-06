@@ -28,3 +28,8 @@ dotnet ef database update
 3. Token Authentication **:** *to not keep login for user*
     - https://jwt.io/
 4. Authentication MiddleWare **:** *to protect controllers && method inside*
+
+#### Skeleton 2 =>
+* design client side using bootstrap 
+2. Angular template forms and services
+3. display user info on page if Authenticated 
