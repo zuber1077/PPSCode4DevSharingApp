@@ -32,4 +32,8 @@ dotnet ef database update
 #### Skeleton 2 =>
 * design client side using bootstrap 
 2. Angular template forms and services
+4. Angular input and output properties
 3. display user info on page if Authenticated 
+
+#### Skeleton 3 =>
+- Handling errors from the api and handle error on the client
