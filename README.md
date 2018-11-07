@@ -40,5 +40,10 @@ dotnet ef database update
 
 #### Skeleton 4 =>
 - Aletifyjs :: notify user for something happens
-- Angular JWT :: send up jwt for every single req make to api
+- Angular JWT :: send up jwt for every single req make to api / check if token has expired or exist
 - NGX Bootstrap :: alternative angular similar to B.js (to not use "Jquery" of course!)
+
+#### Skeleton 5 =>
+- Setting up routing and using RouterLinkActive
+- Using Routing code and protecting the Routes 'multiple routes' / [ Guard ]
+*( ng g guard auth --spec=false )

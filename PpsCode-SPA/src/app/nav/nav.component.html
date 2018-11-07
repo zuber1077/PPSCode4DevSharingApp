@@ -8,19 +8,19 @@
     <!-- <div id="collapseBasic" [collapse]="isCollapsed" class="collapse navbar-collapse" > -->
       <div class="navbar__group navbar__group_left">
         <ul *ngIf="loggedIn()" class="navbar__main-navigation">
-          <li>
-            <a href="#" title="Developers"><span>Developers</span></a>
+          <li class="nav-item" routerLinkActive="active">
+            <a [routerLink]="['/members']"  title="Developers"><span>Developers</span></a>
           </li>
-          <li>
-            <a href="#" title="Lists"><span>Lists</span></a>
+          <li class="nav-item" routerLinkActive="active">
+            <a [routerLink]="['/lists']"  title="Lists"><span>Lists</span></a>
           </li>
-          <li>
-            <a href="#" title="Messages"><span>Messages</span></a>
+          <li class="nav-item" routerLinkActive="active">
+            <a [routerLink]="['/messages']"  title="Messages"><span>Messages</span></a>
           </li>
         </ul>
 
       </div>
-      <span class="navbar__logo"><a href="/"><h4>PPSCode</h4></a></span>
+      <span class="navbar__logo"><a [routerLink]="['/home']"><h4>PPSCode</h4></a></span>
   
       <div *ngIf="loggedIn()" class="dropdown " dropdown>
         <a class="dropdown-toggle text-light" dropdownToggle>

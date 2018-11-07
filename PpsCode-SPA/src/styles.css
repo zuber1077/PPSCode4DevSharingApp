@@ -11,6 +11,16 @@
 .navbar .container > * {
     flex-grow: 0 !important;
 }
+.navbar__main-navigation .active{
+  color: #1DA1F2 !important;
+  border-bottom: 2px solid #1DA1F2;
+}
+.navbar__main-navigation .active :hover{
+  color: #1DA1F2 !important;
+  border-bottom: 0px solid #1DA1F2;
+}
+.navbar__main-navigation li {
+}
 /* General */
 body {
   font-size: 13px;
