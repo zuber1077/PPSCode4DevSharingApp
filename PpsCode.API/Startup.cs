@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -36,11 +37,22 @@ namespace PpsCode.API
             // connecting to sqlite db from appsettings.json
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddJsonOptions(opt => {
+                    opt.SerializerSettings.ReferenceLoopHandling =      Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                });
             // connect client cid
             services.AddCors();
+            services.AddAutoMapper();
+
+            // seed class for seed data
+            services.AddTransient<Seed>();
+
             // Authentication
             services.AddScoped<IAuthRepository, AuthRepository>();
+
+            services.AddScoped<IDevRepository, DevRepository>();
+
             // authentication for guard to protect
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => {
@@ -57,7 +69,7 @@ namespace PpsCode.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, Seed seeder)
         {
             if (env.IsDevelopment())
             {
@@ -84,6 +96,7 @@ namespace PpsCode.API
             }
 
             // app.UseHttpsRedirection();
+            // seeder.SeedUsers();
             // allow anything for client to receive any data 
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication(); // config guard

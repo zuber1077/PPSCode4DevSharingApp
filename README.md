@@ -1,22 +1,51 @@
+
+## starting app
+
+```bash
+# start dotnet app
+$ dotnet run || dotnet run watch
+
+# start angular side
+$ ng serve --host 0.0.0.0
+
+```
+
+
 #### used to be to call or shortcut -->
 
 ``` control + ship + P => nuget Microsoft.EntityFrameworkCore.Sqlite ```
 
+# Initialize new migration  
+```cs
+
+$ dotnet ef migrations add InitialCreate 
+                        -  AddedUserEntity
+                        -  ExtendedUserClass
+                        
+# after models and DataContext for migration
+$ dotnet ef database update
+
+
+# show list of migrations
+$ dotnet ef migrations list
+
+# remove latest migration 
+$ dotnet ef migrations remove
+
+# Drop database 
+$ dotnet ef database drop
+```
+
+# short cuts
+```cs
+
+# constructor 
+ ctor
 #
-```  
-dotnet ef migrations add InitialCreate 
-                         -  AddedUserEntity
-=? after models and DataContext for migration
-
-<on terminal> 
-
-dotnet ef database update
+ prop =? inside model
 
 ```
 
-``` ctor ```
-
-``` prop =? inside model ```
 
 #### Skeleton 1 =>
 1. make HTTP request from Angular to fetch data from API 
@@ -47,3 +76,11 @@ dotnet ef database update
 - Setting up routing and using RouterLinkActive
 - Using Routing code and protecting the Routes 'multiple routes' / [ Guard ]
 *( ng g guard auth --spec=false )
+
+#### Skeleton 5 =>
+1. Extending the User Class => store more data
+    - dotnet ef migrations add ExtendedUserClass
+2. migration and cascade Delete => for relationship data`s 
+    - to make sure photos associated with the user are also deleted
+3. Seeding data into db
+4. Using Automapper => intits into dto and back again automatically into controller rather than doing mappings manually
