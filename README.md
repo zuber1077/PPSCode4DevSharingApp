@@ -90,5 +90,10 @@ $ dotnet ef database drop
 2. create Member Cards (for base info of users)
 3. Adding a Detailed view of the users
 4. Route resolves (retrieve data before the route activated 'Access the data when the route is being loaded' ) 
-5. Adding Photos(Portfolio) gallery 
+5. Adding Photos(Portfolio) gallery
 
+#### Skeleton 7
+1. canDeactive Route Guard - prevent user accidentally clicking different nav if they making changes to form if they have unsaved changes     
+2. @HostListener decoration  # prevent user losing there changes if they try quit the browser
+3. @ViewChild access formComponent 
+4. Persist changes to the APi

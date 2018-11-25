@@ -1,0 +1,72 @@
+<div class="container mt-4">
+  <div class="row" id="profile-page">
+    <div class="col-sm-4">
+      <h2>Your Profile</h2>
+    </div>
+    <div class="col-sm-8">
+      <div *ngIf="editForm.dirty" class="alert alert-info">
+        <strong>Information: </strong>You have made changes. Any unsaved changes will be lost!
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="profile">
+        <img class="profile__image" src="{{user.photoUrl}}" alt="{{user.username}}">
+        <div class="profile__user-info">
+          <span class="profile__handle">
+            <a href="javascript:void(0);">@{{user.username}}</a>
+          </span>
+          <!-- <div class="profile__messaging-options">
+            <a class="btn btn-small">Message {{user.username}}</a>
+            <a class="btn btn-small__green profile__follow-button" href="javascript:void(0)" title="like">Like</a>
+          </div> -->
+        </div>
+        <div class="row">
+          <div class="col-12 user-information__stats">
+            <ul>
+              <li>
+                <span class="user-information__stat-title">Location:</span>
+                <span>{{user.city}}</span>
+              </li>
+              <li>
+                <span class="user-information__stat-title">Last Active:</span>
+                <span>{{user.lastActive}}</span>
+              </li>
+              <li>
+                <span class="user-information__stat-title">Member since:</span>
+                <span>{{user.created}}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button [disabled]="!editForm.dirty" form="editForm" class="btn btn-info btn-block">Save Changes</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="tab-panel tweet">
+        <tabset class="member-tabset">
+          <tab heading="Edit Profile">
+            <form #editForm="ngForm" id="editForm" (ngSubmit)="updateUser()" class="tweet__comment-form">
+              <h4>Description</h4>
+              <textarea name="introduction" rows="6" [(ngModel)]="user.introduction"></textarea>
+              <h4>Interest</h4>
+              <textarea name="interests" rows="6" [(ngModel)]="user.interests"></textarea>
+              <h4>Location Details:</h4>
+              <div class="form-inline">
+                <label for="city">City </label>
+                <input type="text" class="form-control tweet textarea" name="city" [(ngModel)]="user.city">
+                <label for="country">Country </label>
+                <input type="text" class="form-control tweet textarea" name="country" [(ngModel)]="user.country">
+              </div>
+            </form>
+
+          </tab>
+          <tab heading="Edit Photos">
+            <h4>phoyos ofes here</h4>
+          </tab>
+        </tabset>
+      </div>
+    </div>
+  </div>
+</div>
