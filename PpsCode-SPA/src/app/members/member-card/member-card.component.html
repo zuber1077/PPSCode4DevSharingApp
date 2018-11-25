@@ -1,0 +1,87 @@
+<div class="user-information">
+  <div class="row">
+    <div class="col-4 user-information__image">
+      <img src="{{user.photoUrl}}">
+    </div>
+    <div class="col-8 user-information__text">
+      <h4> {{user.username}}</h4>
+      <p class="card-text text-muted text-center">{{user.city}}</p>
+      <ul class="list-inline member-icons animate text-center">
+        <li class="list-inline-item">
+          <button class="btn" title="user profile" [routerLink]="['/members/', user.id]"><i class="fa fa-user"></i></button>
+        </li>
+        <li class="list-inline-item">
+          <button class="btn"><i class="fa fa-bookmark"></i></button>
+        </li>
+        <li class="list-inline-item">
+          <button class="btn"><i class="fa fa-envelope"></i></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- <div class="user-information">
+  <div class="row">
+    <div class="col-4 user-information__image">
+      <img src="https://avatars2.githubusercontent.com/u/36805164?v=4">
+    </div>
+    <div class="col-8 user-information__text">
+      <a href="/users/5b19f2547f6e670004202ccf">
+        <h4>malsantrading</h4>
+      </a>
+      <div class="user-information__stats user-information__stats_small">
+        <ul>
+          <li>
+            <span class="user-information__stat-title">Tweets:</span>
+            <span>
+              <a href="/users/5b19f2547f6e670004202ccf">1</a>
+            </span>
+          </li>
+          <li>
+            <span class="user-information__stat-title">Following:</span>
+            <span>
+              <a href="/users/5b19f2547f6e670004202ccf/following"> 0</a>
+            </span>
+          </li>
+          <li>
+            <span class="user-information__stat-title">Followers: </span>
+            <span>
+              <a href="/users/5b19f2547f6e670004202ccf/followers"> 0</a>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-12 user-information__stats user-information__stats_large">
+      <ul>
+        <li>
+          <span class="user-information__stat-title">Tweets:</span>
+          <span>
+            <a href="/users/5b19f2547f6e670004202ccf">1</a>
+          </span>
+        </li>
+        <li>
+          <span class="user-information__stat-title">Following:</span>
+          <span>
+            <a href="/users/5b19f2547f6e670004202ccf/following"> 0</a>
+          </span>
+        </li>
+        <li>
+          <span class="user-information__stat-title">Followers: </span>
+          <span>
+            <a href="/users/5b19f2547f6e670004202ccf/followers"> 0</a>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+</div>
+
+<style>
+  .btn {
+    margin-top: -25px;
+    background-color: transparent !important;
+    color: #2AAF81;
+  }
+
+</style>

@@ -62,13 +62,31 @@ hr {
   /* background-color: #36f; */
   
 }
+.btn {
+  border-color: rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+.btn-small{
+  border-radius: 5px !important;
+  font-size: 11px;
+  padding: 3px 8px;
+  background-color: #36f!important;
+  color: #fff!important;
+}
+.btn-small__green {
+  border-radius: 5px !important;
+  font-size: 11px;
+  padding: 3px 8px;
+  background-color: rgb(32, 194, 14) !important;
+  color: #fff!important;
+}
 .btn-primary{
-  background: transparent!important;
+  /* background: transparent!important; */
   border-color: #36f!important;
-  color: #36f!important;
+  color: #fff!important;
 }
 .btn-primary:hover{
-      background: #36f!important;
+    background: #36f!important;
     border-color: #36f!important;
     color: #fff!important;
 }
@@ -266,6 +284,10 @@ pre code {
 .tweet__form .tweet__edit {
   background-color: #2AAF81; }
   .tweet__form .tweet__edit:hover {
+    background-color: #2fc490; }
+.tweet__edit {
+  background-color: #2AAF81; }
+  .tweet__edit:hover {
     background-color: #2fc490; }
 
 .tweet__form .tweet__delete {
@@ -623,3 +645,24 @@ footer {
 .form-control {
   border-color: transparent;
 }
+
+.nav-tabs .nav-link{
+  color: rgb(32, 194, 14);
+}
+.member-tabset>.nav-tabs>li.active>a {
+   color: #fff !important;
+   background-color: transparent !important;
+   border-color: #dee2e6 #dee2e6 #fff;
+}
+.member-tabset>.nav-tabs>li.active>a:hover {
+  color: #fff !important;
+  background-color: transparent !important;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+  .member-tabset>.tab-content {
+    margin-top: -3px;
+    border: 0;
+    padding: 15px 0;
+  }
+
