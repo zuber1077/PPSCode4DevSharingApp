@@ -1,5 +1,6 @@
 using System.Linq;
 using AutoMapper;
+using PpsCode.API.Data;
 using PpsCode.API.Dtos;
 using PpsCode.API.Models;
 
@@ -25,6 +26,8 @@ namespace PpsCode.API.Helpers
                 });
             CreateMap<Photo, PhotosForDetailedDto>();
             CreateMap<UserForUpdateDto, User>();
+            CreateMap<Photo, PhotoForReturnDto>();
+            CreateMap<PhotoForCreationDto, Photo>();
         }
     }
 }

@@ -25,9 +25,14 @@
       </a></span>
 
     <div *ngIf="loggedIn()" class="dropdown " dropdown>
-      <a class="dropdown-toggle text-light" dropdownToggle>
-        Welcome {{authService.decodedToken?.unique_name | titlecase}}
-      </a>
+      <div class="navbar__profile">
+        <div class="navbar__profile-logout mr-1">
+          <img class="tweet__image chat-image logout-image" src="{{photoUrl}}" alt="">
+        </div>
+        <a class="dropdown-toggle text-light" dropdownToggle>
+          Welcome {{authService.decodedToken?.unique_name | titlecase}}
+        </a>
+      </div>
 
       <div class="dropdown-menu mt-3" *dropdownMenu>
         <a class="dropdown-item" [routerLink]="['/member/edit']"><i class="fa fa-user"></i> Edit Profile</a>

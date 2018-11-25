@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -18,8 +19,10 @@ namespace PpsCode.API.Controllers
   {
     private readonly IAuthRepository _repo;
     private readonly IConfiguration _config;
-    public AuthController(IAuthRepository repo, IConfiguration config)
+    private readonly IMapper _mapper;
+    public AuthController(IAuthRepository repo, IConfiguration config, IMapper mapper)
     {
+      _mapper = mapper;
       _config = config;
       _repo = repo;
 
@@ -71,29 +74,33 @@ namespace PpsCode.API.Controllers
             new Claim(ClaimTypes.Name, userFromRepo.Username)
         };
 
-        // creating security key and use z key and encrypt
-        var key = new SymmetricSecurityKey(Encoding.UTF8
-        .GetBytes(_config.GetSection("AppSettings:Token").Value)); // appsettings.json
+      // creating security key and use z key and encrypt
+      var key = new SymmetricSecurityKey(Encoding.UTF8
+      .GetBytes(_config.GetSection("AppSettings:Token").Value)); // appsettings.json
 
-        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
-        // security token descriptor (contain claims and expiry of token & signing credentials) 
-        var tokenDescriptor = new SecurityTokenDescriptor
-        {
-            Subject = new ClaimsIdentity(claims),
-            Expires = DateTime.Now.AddDays(1),
-            SigningCredentials = creds
-        };
-        // token handler
+      var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+      // security token descriptor (contain claims and expiry of token & signing credentials) 
+      var tokenDescriptor = new SecurityTokenDescriptor
+      {
+        Subject = new ClaimsIdentity(claims),
+        Expires = DateTime.Now.AddDays(1),
+        SigningCredentials = creds
+      };
+      // token handler
 
-        var tokenHandler = new JwtSecurityTokenHandler();
+      var tokenHandler = new JwtSecurityTokenHandler();
 
-        // using tokenHandlet create token and pass token discriptor
+      // using tokenHandlet create token and pass token discriptor
 
-        var token = tokenHandler.CreateToken(tokenDescriptor); // contain JWT to return
+      var token = tokenHandler.CreateToken(tokenDescriptor); // contain JWT to return
+
+      var user = _mapper.Map<UserForListDto>(userFromRepo);
 
         // return JWT token to client
-        return Ok(new {
-            token = tokenHandler.WriteToken(token)
+      return Ok(new
+        {
+          token = tokenHandler.WriteToken(token),
+          user
         });
     }
   }

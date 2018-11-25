@@ -10,7 +10,7 @@
     </div>
     <div class="col-sm-4">
       <div class="profile">
-        <img class="profile__image" src="{{user.photoUrl}}" alt="{{user.username}}">
+        <img class="profile__image" src="{{photoUrl}}" alt="{{user.username}}">
         <div class="profile__user-info">
           <span class="profile__handle">
             <a href="javascript:void(0);">@{{user.username}}</a>
@@ -63,7 +63,7 @@
 
           </tab>
           <tab heading="Edit Photos">
-            <h4>phoyos ofes here</h4>
+            <app-photo-editor [photos]="user.photos" (getMemberPhotoChange)="updateMainPhoto($event)"></app-photo-editor>
           </tab>
         </tabset>
       </div>

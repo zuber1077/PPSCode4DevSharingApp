@@ -97,3 +97,10 @@ $ dotnet ef database drop
 2. @HostListener decoration  # prevent user losing there changes if they try quit the browser
 3. @ViewChild access formComponent 
 4. Persist changes to the APi
+
+#### Skeleton 8
+1. Adding file uploader *() to SPA (NG2 file-upload)
+3. setting Main photo
+4. Any to Any component communication
+5. add single, multiple photo and delete single photo (Filter, Splice) 
+``` git update-index --assume-unchanged PpsCode.API/appsettings.json ```

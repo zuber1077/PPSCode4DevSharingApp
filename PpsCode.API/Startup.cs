@@ -43,6 +43,8 @@ namespace PpsCode.API
                 });
             // connect client cid
             services.AddCors();
+            // value inside CloudinarySettings match inside AppSetting
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper();
 
             // seed class for seed data
