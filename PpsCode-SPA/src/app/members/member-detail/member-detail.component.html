@@ -21,11 +21,11 @@
               </li>
               <li>
                 <span class="user-information__stat-title">Last Active:</span>
-                <span>{{user.lastActive}}</span>
+                <span>{{user.lastActive | timeAgo}}</span>
               </li>
               <li>
                 <span class="user-information__stat-title">Member since:</span>
-                <span>{{user.created}}</span>
+                <span>{{user.created | date: 'mediumDate'}}</span>
               </li>
             </ul>
           </div>

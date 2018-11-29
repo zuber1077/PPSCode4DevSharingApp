@@ -107,4 +107,5 @@ $ dotnet ef database drop
 
 #### Skeleton 9
 1. Get More info from user when register
-(UI)* Reactive Form /Custom Validation/ Validation Feedback When user Register
+2. (UI)* Reactive Form /Custom Validation/ Validation Feedback When user Register
+3. Action Filters (display user timeAgo*(Last Active) when user make an action inside the application) && dates SPA pipes

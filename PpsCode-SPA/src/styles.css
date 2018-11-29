@@ -505,7 +505,7 @@ pre code {
   display: block; }
 
 .user-information__stats span:not(.user-information__stat-title) {
-  font-size: 18px;
+  font-size: 14px;
   color: #36f; }
 
 .useful-links a {

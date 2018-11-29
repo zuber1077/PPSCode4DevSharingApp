@@ -55,6 +55,9 @@ namespace PpsCode.API
 
             services.AddScoped<IDevRepository, DevRepository>();
 
+            // 
+            services.AddScoped<LogUserActivity>();
+
             // authentication for guard to protect
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => {

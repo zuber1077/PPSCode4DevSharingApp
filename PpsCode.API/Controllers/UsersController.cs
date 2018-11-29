@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PpsCode.API.Data;
 using PpsCode.API.Dtos;
+using PpsCode.API.Helpers;
 
 namespace PpsCode.API.Controllers
 {
+  [ServiceFilter(typeof(LogUserActivity))]
   [Authorize]
   [Route("api/[controller]")]
   [ApiController]
