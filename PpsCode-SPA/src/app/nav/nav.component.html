@@ -27,7 +27,7 @@
     <div *ngIf="loggedIn()" class="dropdown " dropdown>
       <div class="navbar__profile">
         <div class="navbar__profile-logout mr-1">
-          <img class="tweet__image chat-image logout-image" src="{{photoUrl}}" alt="">
+          <img class="tweet__image chat-image logout-image" src="{{photoUrl  || '../../assets/user.png'}}" alt="">
         </div>
         <a class="dropdown-toggle text-light" dropdownToggle>
           Welcome {{authService.decodedToken?.unique_name | titlecase}}

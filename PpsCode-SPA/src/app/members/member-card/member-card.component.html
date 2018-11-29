@@ -1,7 +1,7 @@
 <div class="user-information">
   <div class="row">
     <div class="col-4 user-information__image">
-      <img src="{{user.photoUrl}}">
+      <img src="{{user.photoUrl || '../../../assets/user.png'}}">
     </div>
     <div class="col-8 user-information__text">
       <h4> {{user.username}}</h4>

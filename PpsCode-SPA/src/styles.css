@@ -3,10 +3,17 @@
 @import '../node_modules/font-awesome/css/font-awesome.min.css';
 @import '../node_modules/alertifyjs/build/css/alertify.min.css';
 @import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+@import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
+
+/* #f0ad4e */
 
 :: {
     color: #fff;
-    background-color: #000;
+    background-color: #3d7af4;
+}
+::selection {
+  background: #3d7af4;
+  color: #FFF;
 }
 .navbar .container > * {
     flex-grow: 0 !important;
@@ -236,7 +243,7 @@ pre code {
   padding: 15px;
   border-radius: 2px;
   border: 1px solid #000;
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
 
 .follower {
   text-align: center; }
@@ -256,7 +263,7 @@ pre code {
   padding: 15px;
   border-radius: 2px;
   border: 1px solid #000;
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
 
 .tweet {
   color: #ffffff; }
@@ -266,6 +273,12 @@ pre code {
   clear: both;
   display: block; }
 
+.invalid-feedback{
+  width: 100%;
+  margin-top: -4.2px;
+  font-size: 97%;
+  color: #dc3545;
+}
 .tweet__image {
   border-radius: 50%;
   height: 40px;
@@ -394,7 +407,7 @@ pre code {
   padding: 15px;
   border-radius: 2px;
   border: 1px solid #000;
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
 
 .profile {
   text-align: center; }
@@ -427,7 +440,7 @@ pre code {
   padding-top: 36px; }
 
 .login-container {
-  text-align: center;
+  /* text-align: center; */
   margin: auto; }
 
 .github-btn {
@@ -449,7 +462,7 @@ pre code {
   padding: 15px;
   border-radius: 2px;
   border: 1px solid #000;
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
 
 .user-information > .row {
   align-items: center; }
@@ -530,7 +543,7 @@ pre code {
   padding: 15px;
   border-radius: 2px;
   border: 1px solid #000;
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
 
 .analytics {
   padding-top: 30px;

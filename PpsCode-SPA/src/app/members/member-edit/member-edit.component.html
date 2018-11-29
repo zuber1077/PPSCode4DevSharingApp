@@ -10,7 +10,7 @@
     </div>
     <div class="col-sm-4">
       <div class="profile">
-        <img class="profile__image" src="{{photoUrl}}" alt="{{user.username}}">
+        <img class="profile__image" src="{{photoUrl  || '../../../assets/user.png'}}" alt="{{user.username}}">
         <div class="profile__user-info">
           <span class="profile__handle">
             <a href="javascript:void(0);">@{{user.username}}</a>

@@ -104,3 +104,7 @@ $ dotnet ef database drop
 4. Any to Any component communication
 5. add single, multiple photo and delete single photo (Filter, Splice) 
 ``` git update-index --assume-unchanged PpsCode.API/appsettings.json ```
+
+#### Skeleton 9
+1. Get More info from user when register
+(UI)* Reactive Form /Custom Validation/ Validation Feedback When user Register
